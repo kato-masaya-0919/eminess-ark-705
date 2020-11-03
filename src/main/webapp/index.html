@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!-- ブラウザに対して使用している言語を日本語として認識させる -->
+<html lang="ja">
+	<head>
+		<!-- 文字コードをUTF-8に設定 -->
+		<meta charset="UTF-8"/>
+		<!-- タイトルを設定(ブラウザのタブに表示) -->
+		<title>エミネスアーク705</title>
+		<!-- faviconを指定(ブラウザのタブに表示) -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<!-- レスポンシブ対応(おまじない) -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<!-- jQueryの指定 -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- JavaScriptを指定 -->
+		<script type="text/javascript" src="js/main.js" charset="UTF-8"></script>
+		<!-- CSSを指定 -->
+		<link href="styles/main.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<!-- loading画面 -->
+		<div id="loading-lay">
+			<div class="cv-spinner">
+				<span class="spinner"></span>
+			</div>
+		</div>
+		<!-- ヘッダー -->
+		<header>
+			<h2>
+				エミネスアーク705～生活費～
+			</h2>
+		</header>
+		
+		<!-- 2カラム -->
+		<div id = "maindiv">
+			<!-- ナビゲーション -->
+			<nav>
+				<table>
+					<tr>
+						<th>
+							【検索】
+						</th>
+					</tr>
+					<tr>
+						<td>
+							検索条件を入力してください。<br>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<!-- 検索欄 -->
+				<table>
+					<tr>
+						<th>ID</th>
+						<td><input type="text" id="search-id"></td>
+					</tr>
+					<tr>
+						<th>日付(From)</th>
+						<td>
+							<div>
+								<SELECT id="search-date-from-y">
+									<OPTION VALUE="" selected></OPTION>
+									<OPTION VALUE="2020">2020</OPTION>
+									<OPTION VALUE="2021">2021</OPTION>
+								</SELECT>
+								/
+								<SELECT id="search-date-from-m">
+									<OPTION VALUE="" selected></OPTION>
+									<OPTION VALUE="1">1</OPTION>
+									<OPTION VALUE="2">2</OPTION>
+									<OPTION VALUE="3">3</OPTION>
+									<OPTION VALUE="4">4</OPTION>
+									<OPTION VALUE="5">5</OPTION>
+									<OPTION VALUE="6">6</OPTION>
+									<OPTION VALUE="7">7</OPTION>
+									<OPTION VALUE="8">8</OPTION>
+									<OPTION VALUE="9">9</OPTION>
+									<OPTION VALUE="10">10</OPTION>
+									<OPTION VALUE="11">11</OPTION>
+									<OPTION VALUE="12">12</OPTION>
+								</SELECT>
+								/
+								<SELECT id="search-date-from-d">
+									<OPTION VALUE="" selected></OPTION>
+								</SELECT>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>日付(To)</th>
+						<td>
+							<div>
+								<SELECT id="search-date-to-y">
+									<OPTION VALUE="" selected></OPTION>
+									<OPTION VALUE="2020">2020</OPTION>
+									<OPTION VALUE="2021">2021</OPTION>
+								</SELECT>
+								/
+								<SELECT id="search-date-to-m">
+									<OPTION VALUE="" selected></OPTION>
+									<OPTION VALUE="1">1</OPTION>
+									<OPTION VALUE="2">2</OPTION>
+									<OPTION VALUE="3">3</OPTION>
+									<OPTION VALUE="4">4</OPTION>
+									<OPTION VALUE="5">5</OPTION>
+									<OPTION VALUE="6">6</OPTION>
+									<OPTION VALUE="7">7</OPTION>
+									<OPTION VALUE="8">8</OPTION>
+									<OPTION VALUE="9">9</OPTION>
+									<OPTION VALUE="10">10</OPTION>
+									<OPTION VALUE="11">11</OPTION>
+									<OPTION VALUE="12">12</OPTION>
+								</SELECT>
+								/
+								<SELECT id="search-date-to-d">
+									<OPTION VALUE="" selected></OPTION>
+								</SELECT>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>曜日</th>
+						<td>
+							<SELECT id="search-yobi">
+								<OPTION VALUE="" selected></OPTION>
+								<OPTION VALUE="月">月</OPTION>
+								<OPTION VALUE="火">火</OPTION>
+								<OPTION VALUE="水">水</OPTION>
+								<OPTION VALUE="木">木</OPTION>
+								<OPTION VALUE="金">金</OPTION>
+								<OPTION VALUE="土">土</OPTION>
+								<OPTION VALUE="日">日</OPTION>
+							</SELECT>
+						</td>
+					</tr>
+					<tr>
+						<th>使途</th>
+						<td><input type="text" id="search-use"></td>
+					</tr>
+					<tr>
+						<th>カテゴリ</th>
+						<td>
+							<SELECT id="search-categ">
+								<OPTION VALUE="" selected></OPTION>
+								<OPTION VALUE="食品">食品</OPTION>
+								<OPTION VALUE="雑貨">雑貨</OPTION>
+								<OPTION VALUE="電気代">電気代</OPTION>
+								<OPTION VALUE="ガス代">ガス代</OPTION>
+								<OPTION VALUE="水道代">水道代</OPTION>
+								<OPTION VALUE="通信料金">通信料金</OPTION>
+							</SELECT>
+						</td>
+					</tr>
+					<tr>
+						<th>名称</th>
+						<td><input type="text" id="search-name"></td>
+					</tr>
+					<tr>
+						<th>金額</th>
+						<td><div style ="width:'100%';"><div><input type="text" id="search-price"></div>　円</div></td>
+					</tr>
+					<tr>
+						<th>比率</th>
+						<td>
+							<SELECT id="search-rate">
+								<OPTION VALUE="" selected>XXX%(加藤):XXX%(足袋抜)</OPTION>
+								<OPTION VALUE="10:0">100%(加藤):0%(足袋抜)</OPTION>
+								<OPTION VALUE="9:1">90%(加藤):10%(足袋抜)</OPTION>
+								<OPTION VALUE="8:2">80%(加藤):20%(足袋抜)</OPTION>
+								<OPTION VALUE="7.5:2.5">75%(加藤):25%(足袋抜)</OPTION>
+								<OPTION VALUE="7:3">70%(加藤):30%(足袋抜)</OPTION>
+								<OPTION VALUE="6:4">60%(加藤):40%(足袋抜)</OPTION>
+								<OPTION VALUE="5:5">50%(加藤):50%(足袋抜) ★半々</OPTION>
+								<OPTION VALUE="4:6">40%(加藤):60%(足袋抜)</OPTION>
+								<OPTION VALUE="3:7">30%(加藤):70%(足袋抜)</OPTION>
+								<OPTION VALUE="2.5:7.5">25%(加藤):75%(足袋抜)</OPTION>
+								<OPTION VALUE="2:8">20%(加藤):80%(足袋抜)</OPTION>
+								<OPTION VALUE="1:9">10%(加藤):90%(足袋抜)</OPTION>
+								<OPTION VALUE="0:100">0%(加藤):100%(足袋抜)</OPTION>
+							</SELECT>
+						</td>
+					</tr>
+					<tr>
+						<th>精算</th>
+						<td>
+							<SELECT id="search-paystatus">
+								<OPTION VALUE=""></OPTION>
+								<OPTION VALUE="精算済">精算済</OPTION>
+								<OPTION VALUE="未精算" selected>未精算</OPTION>
+							</SELECT>
+						</td>
+					</tr>
+					<tr>
+						<th>備考</th>
+						<td><input type="text" id="search-remarks"></td>
+					</tr>
+				</table>
+				<br>
+				<input id = "search-btn" type="button" value="検索"><br>
+				<br>
+				<table id="search-result">
+					<tr>
+						<th>
+							【検索結果】
+						</th>
+						<td>
+							以下の条件で検索しました。<br><br>
+							<table id="search-condition"></table>
+						</td>
+				</table>
+				<br>
+				<!--<input id = "check-btn" type="button" value="チェックした行のidを表示"><br>-->
+				<!-- ダークモード -->
+				<table>
+					<!-- ダークモード -->
+					<tr>
+						<th>ダークモード	</th>
+						<td><input type="checkbox" id="chk-darkmode"></td>
+					</tr>
+				</table>
+			</nav>
+			
+			<!-- コンテンツ -->
+			<main>
+				<table id="pricesum"></table>
+				<br>
+				<table id="expenses"></table>
+			</main>
+		</div>
+		
+		<!-- フッター -->
+		<footer>
+		
+		</footer>
+	</body>
+</html>

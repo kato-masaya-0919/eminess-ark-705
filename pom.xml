@@ -24,6 +24,11 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+	    <dependency>
+	        <groupId>com.fasterxml.jackson.core</groupId>
+	        <artifactId>jackson-databind</artifactId>
+	        <version>2.11.3</version>
+	    </dependency>
 	</dependencies>
 	<build>
 		<finalName>expenses_db</finalName>

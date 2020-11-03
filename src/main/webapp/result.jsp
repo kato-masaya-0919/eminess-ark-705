@@ -4,7 +4,7 @@
 <head>
 	<title>簡易DBアプリ</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
-	<link href="styles/style.css" rel="stylesheet" type="text/css">
+	<link href="styles/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<br>
@@ -19,7 +19,7 @@
 	<br>
 	<br>
 
-	<a href="/index.jsp">トップページに戻る</a>
+	<a href="/index.html">トップページに戻る</a>
 
 
 </body>

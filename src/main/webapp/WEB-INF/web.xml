@@ -12,13 +12,13 @@
 		<servlet-name>EditServlet</servlet-name>
 		<servlet-class>dev.java.EditServlet</servlet-class>
 	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>SearchServlet</servlet-name>
 		<url-pattern>/expenses_db/Search</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping>	
 	<servlet-mapping>
 		<servlet-name>EditServlet</servlet-name>
 		<url-pattern>/expenses_db/Edit</url-pattern>
 	</servlet-mapping>
+
 </web-app>

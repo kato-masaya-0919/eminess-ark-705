@@ -22,29 +22,29 @@ public class EditServlet extends HttpServlet {
 		String status ="成功しました";
 
 		// JavaBeansの初期化
-		ShainBeans shain = new ShainBeans(request);
+		ExpensesBeans expenses = new ExpensesBeans(request);
 
 		switch (mode) {
 
 		case "add": // 登録
-			if (shain.addData() == false) {
+			if (expenses.addData() == false) {
 				status ="失敗しました";
 			}
 			break;
 
 		case "delete": // 削除
-			if (shain.deleteData() == false) {
+			if (expenses.deleteData() == false) {
 				status ="失敗しました";
 			}
 			break;
 
 		case "change": // 変更
-			request.setAttribute("shain", shain);
+			request.setAttribute("shain", expenses);
 			request.getRequestDispatcher("/change.jsp").forward(request, response);
 			return;
 
 		case "del_add": // 変更確定
-			if (!(shain.deleteData() && shain.addData())) {
+			if (!(expenses.deleteData() && expenses.addData())) {
 				status ="失敗しました";
 			}
 			break;

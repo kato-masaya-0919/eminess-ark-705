@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+/* loading画面の設定 */
+#loading-lay{
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	height:100%;
+	display: none;
+	background: rgba(0,0,0,0.6);
+}
+.cv-spinner {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;  
+}
+.spinner {
+	width: 40px;
+	height: 40px;
+	border: 4px #ddd solid;
+	border-top: 4px #2e93e6 solid;
+	border-radius: 50%;
+	animation: sp-anime 0.8s infinite linear;
+}
+@keyframes sp-anime {
+100%{ 
+	transform: rotate(360deg); 
+	}
+}
+.is-hide{
+	display:none;
+}
+
+/* 全体の余白を0にする(loadingが覆えなくなるため) */
+body{
+	margin: 0px;
+	padding: 0px;
+	border-style: none;
+}
+
+/* loading画面以外のbodyの左余白を設定 */
+header, footer, nav, main{
+	margin: 10px;
+}
+
+nav{
+	width:fixed;
+	min-width:375px;
+}
+
+/* ヘッダーとフッター以外はflexに設定 */
+#maindiv, #maindiv * div{
+	display: flex;
+}
+
+#maindiv * div{
+	width:100%;
+	box-sizing: border-box;
+}
+
+/* mainを幅一杯に設定 */
+main{
+	flex:1;
+}
+
+header{
+	white-space: nowrap;
+}
+table{
+	border-collapse: collapse;
+	white-space: nowrap;
+}	
+input, table, textarea, button, select{
+	width : 100%;
+	box-sizing: border-box;
+}
+
+table th,td,tr{
+	padding: 5px;
+	border: solid #000000 1px;
+	white-space: nowrap;
+}
+
+table th{
+	background-color: #e0e0e0;
+}
+
+input[type=checkbox]{
+	display: inline-block;
+	transform: scale(1.5);
+}
+
+#expenses span{
+    display: none;
+}
+
+#pricesum{
+	max-width:375px;
+}
+
+#search-result th{
+	width:50px;
+}
+
+@media screen and (max-width: 767px) {
+	body{
+		overflow-x:hidden;
+	}
+	header{
+		width : 100vm;
+		text-align:center;
+	}
+
+	#maindiv{
+		width : 100vm;
+		flex-direction:column;
+	}
+	
+	#pricesum{
+		width : 100vm;
+		max-width:none;
+		box-sizing: border-box;
+	}
+	
+	#expenses input{
+		width : auto;
+	}
+	#expenses th{
+	    display: none;
+	}
+	
+	#expenses td{
+		display: block;
+		border:none;
+		background: #EEEEEE;
+	}
+	
+	#expenses tr{
+		display: block;
+		border:none;
+		padding :25px;
+	}
+
+	#expenses span{
+		width:120px;
+		display: inline-block;
+	    font-weight: bold;
+	}
+}
